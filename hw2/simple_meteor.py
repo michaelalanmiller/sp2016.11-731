@@ -4,6 +4,7 @@ import argparse # optparse is deprecated
 from itertools import islice # slicing for iterators
 import pdb
 import nltk
+import string
  
 class SimpleMeteor:
 	""" This class implements a simple version of the METEOR MT evaluation 
@@ -32,8 +33,13 @@ class SimpleMeteor:
 		""" Scores hypothesis sentences based on the reference sentence 
 			Sentences passed in as lists of strings
 		"""
-		h1score = self.score(h1, ref)
-		h2score = self.score(h2, ref)
+		h1score = 0
+		h2score = 0
+
+		if len(h1) > 0:
+			h1score = self.score(h1, ref)
+		if len(h2) > 0:
+			h2score = self.score(h2, ref)
 
 		if h1score > h2score:
 			print -1
@@ -52,7 +58,13 @@ class Preprocessor:
 			for pair in f:
 				alltoks = []
 				for sent in pair.split(' ||| '):
+					# tokenize
 					toks = nltk.word_tokenize(sent.strip().decode('utf8'))
+		
+					# remove punctuation
+					toks = [tok for tok in toks if not tok in string.punctuation]
+
+					# stem
 					if stem:
 						toks = [ps.stem(tok) for tok in toks]
 					alltoks.append(toks)
@@ -68,7 +80,7 @@ def main():
 	# note that if x == [1, 2, 3], then x[:None] == x[:] == x (copy); no need for sys.maxint
 	opts = parser.parse_args()
  
-	sm = SimpleMeteor(alpha=0.505)
+	sm = SimpleMeteor(alpha=0.51)
 	p = Preprocessor()
 
 	for h1, h2, ref in islice(p.preprocess(opts.input, stem=False), opts.num_sentences):
