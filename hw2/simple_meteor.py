@@ -3,7 +3,7 @@ from __future__ import division
 import argparse # optparse is deprecated
 from itertools import islice # slicing for iterators
 import pdb
-from nltk import word_tokenize
+import nltk
  
 class SimpleMeteor:
 	""" This class implements a simple version of the METEOR MT evaluation 
@@ -44,11 +44,19 @@ class SimpleMeteor:
 
 class Preprocessor:
 
-	def preprocess(self, input):
+	def preprocess(self, input, stem=False):
 	# we create a generator and avoid loading all sentences into a list
+		ps = nltk.PorterStemmer()
+
 		with open(input) as f:
 			for pair in f:
-				yield [word_tokenize(sent.strip().decode('utf8')) for sent in pair.split(' ||| ')]
+				alltoks = []
+				for sent in pair.split(' ||| '):
+					toks = nltk.word_tokenize(sent.strip().decode('utf8'))
+					if stem:
+						toks = [ps.stem(tok) for tok in toks]
+					alltoks.append(toks)
+				yield alltoks
 
 def main():
 	parser = argparse.ArgumentParser(description='Evaluate translation hypotheses.')
@@ -60,11 +68,10 @@ def main():
 	# note that if x == [1, 2, 3], then x[:None] == x[:] == x (copy); no need for sys.maxint
 	opts = parser.parse_args()
  
- 
 	sm = SimpleMeteor()
 	p = Preprocessor()
 
-	for h1, h2, ref in islice(p.preprocess(opts.input), opts.num_sentences):
+	for h1, h2, ref in islice(p.preprocess(opts.input, stem=False), opts.num_sentences):
 		sm.evaluate(h1, h2, ref)
 
 # convention to allow import of this file as a module
