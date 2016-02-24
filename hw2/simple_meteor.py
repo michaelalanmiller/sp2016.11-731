@@ -68,7 +68,7 @@ def main():
 	# note that if x == [1, 2, 3], then x[:None] == x[:] == x (copy); no need for sys.maxint
 	opts = parser.parse_args()
  
-	sm = SimpleMeteor()
+	sm = SimpleMeteor(alpha=0.505)
 	p = Preprocessor()
 
 	for h1, h2, ref in islice(p.preprocess(opts.input, stem=False), opts.num_sentences):
