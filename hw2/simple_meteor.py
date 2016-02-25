@@ -2,6 +2,7 @@
 from __future__ import division
 import argparse # optparse is deprecated
 from itertools import islice # slicing for iterators
+from collections import Counter
 import pdb
 import nltk
 import string
@@ -15,10 +16,24 @@ class SimpleMeteor:
 		self.alpha = alpha # tuning parameter for precision and recall
 
 	def unigram_precision(self, h, ref):
-		return sum(1 for w in h if w in ref)/len(h)
+		refc = Counter(ref)
+		hc = Counter(h)
+		p = 0
+
+		for wd in hc:
+			if wd in refc:
+				p += min(hc[wd], refc[wd])
+		return p/len(h)
 		
 	def unigram_recall(self, h, ref):
-		return sum(1 for w in h if w in ref)/len(ref)
+		refc = Counter(ref)
+		hc = Counter(h)
+		r = 0
+
+		for wd in hc:
+			if wd in refc:
+				r += min(hc[wd], refc[wd])
+		return r/len(ref)
 
 	def score(self, h, ref):
 		p = self.unigram_precision(h, ref)
@@ -62,7 +77,9 @@ class Preprocessor:
 					toks = nltk.word_tokenize(sent.strip().decode('utf8'))
 		
 					# remove punctuation
-					toks = [tok for tok in toks if not tok in string.punctuation]
+					punct = ["''", "``", 'quot']
+					punct.extend([c for c in string.punctuation])
+					toks = [tok for tok in toks if not tok in punct]
 
 					# stem
 					if stem:
@@ -80,7 +97,7 @@ def main():
 	# note that if x == [1, 2, 3], then x[:None] == x[:] == x (copy); no need for sys.maxint
 	opts = parser.parse_args()
  
-	sm = SimpleMeteor(alpha=0.51)
+	sm = SimpleMeteor(alpha=0.5)
 	p = Preprocessor()
 
 	for h1, h2, ref in islice(p.preprocess(opts.input, stem=False), opts.num_sentences):
