@@ -97,13 +97,12 @@ def main():
 	# note that if x == [1, 2, 3], then x[:None] == x[:] == x (copy); no need for sys.maxint
 	opts = parser.parse_args()
  
-	sm = SimpleMeteor(alpha=0.5)
+	sm = SimpleMeteor(alpha=0.505)
 	p = Preprocessor()
 
-	for h1, h2, ref in islice(p.preprocess(opts.input, stem=False), opts.num_sentences):
+	for h1, h2, ref in islice(p.preprocess(opts.input, stem=True), opts.num_sentences):
 		sm.evaluate(h1, h2, ref)
 
 # convention to allow import of this file as a module
 if __name__ == '__main__':
 	main()
-
