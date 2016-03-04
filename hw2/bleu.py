@@ -7,6 +7,7 @@ import nltk
 import string
 from scipy.stats.mstats import gmean
 import math
+import numpy as np
  
 class Bleu:
 	""" This class implements a sentence-level implementation of the BLEU
@@ -39,52 +40,54 @@ class Bleu:
 			if wd in refc:
 				p += min(hc[wd], refc[wd])
 
-		if sum(hc.values()) == 0:
-			pdb.set_trace()
 		return p/sum(hc.values())
 
 	def ngram_precisions(self, h, ref):
 		""" Returns an array of the n-gram precisions up to the ngram level
 		"""
 		ngram_precisions = []
-		for i in xrange(1, min(self.ngram_level+1, len(ref), len(h))):
+		for i in xrange(1, min(self.ngram_level+1, len(ref)+1, len(h)+1)):
 			s = self.ngram_precision(h, ref, i)
 			ngram_precisions.append(s)
 		return ngram_precisions
 		
-	def score(self, h, ref, postag=False, hpos=[], refpos=[]):
-		score = 0
+	def score(self, h, ref, postag=False, hpos=[], refpos=[], wts=[]):
+		""" Weights are for ngram weights in the average
+		"""
+		score = 0.0
 
 		if len(h) > 0:
 			ngram_precisions = self.ngram_precisions(h, ref)
-
 			bp = self.brevity_penalty(h, ref)
 
 			if postag:
 				postag_ngram_precisions = self.ngram_precisions(hpos, refpos)
-				score = bp * (1-self.beta)*gmean(ngram_precisions) + \
+				if wts:
+					score = bp * (1-self.beta)*self.wgmean(ngram_precisions, wts) + \
+						self.beta*self.wgmean(postag_ngram_precisions, wts)
+				else:
+					score = bp * (1-self.beta)*gmean(ngram_precisions) + \
 						self.beta*gmean(postag_ngram_precisions)
 			
 			else:
-				score = bp * gmean(ngram_precisions)
+				if wts:
+					score = bp * self.wgmean(ngram_precisions, wts)
+				else:
+					score = bp * gmean(ngram_precisions)
 
 		return score
 
-	def evaluate(self, h1, h2, ref):
-		""" Scores hypothesis sentences based on the reference sentence 
-			Sentences passed in as lists of strings
-		"""
-		h1score = 0
-		h2score = 0
+	def wgmean(self, nums, weights):
+		''' 
+        Return the geometric average of nums
+        @param    list    nums    List of nums to avg
+        @return   float   Geometric avg of nums 
+		'''
 
-		if len(h1) > 0:
-			h1score = self.score(h1, ref)
-		if len(h2) > 0:
-			h2score = self.score(h2, ref)
-
-		if h1score > h2score:
-			print -1
-		elif h1score == h2score:
-			print 0
-		else:
-			print 1
+		numer = 0
+		if any(n==0.0 for n in nums):
+			return 0.0
+		for i in xrange(len(nums)):
+			numer += weights[i] * math.log(nums[i])
+		
+		return math.exp(numer/sum(weights[:len(nums)]))

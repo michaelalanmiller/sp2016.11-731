@@ -17,9 +17,9 @@ class MeteorBleu:
 	"""
 
 	def __init__(self, alpha=0.5):
-		self.simple_meteor = SimpleMeteor(alpha)
+		self.simple_meteor = SimpleMeteor(alpha=alpha, beta=0.16)
 		self.tri_bleu = Bleu(3)
-		self.four_bleu = Bleu(4)
+		self.four_bleu = Bleu(4, beta=0.13)
 		self.p = Preprocessor()
 
 	def features(self, tokline, posline):
@@ -87,7 +87,7 @@ class MeteorBleu:
 				h2p, refp, postag=True, hpos=h2pos, refpos=refpos)
 		h1_h2 = h1score - h2score
 		features += [h1score, h2score, h1_h2]
-		
+
 		# postag-smoothed 4-gram BLEU, lowercased, stemmed
 		h1p, h2p, refp = self.p.preprocess(tokline, stem=True, lowercase=True)
 		h1pos, h2pos, refpos = self.p.preprocess(posline)
@@ -98,7 +98,29 @@ class MeteorBleu:
 		h1_h2 = h1score - h2score
 		features += [h1score, h2score, h1_h2]
 		
+		# postag-smoothed 4-gram BLEU, lowercased, stemmed, weighted
+		w = [10,5,2,1]
+		h1p, h2p, refp = self.p.preprocess(tokline, stem=True, lowercase=True)
+		h1pos, h2pos, refpos = self.p.preprocess(posline)
+		h1score = self.four_bleu.score(
+				h1p, refp, postag=True, hpos=h1pos, refpos=refpos, wts=w)
+		h2score = self.four_bleu.score(
+				h2p, refp, postag=True, hpos=h2pos, refpos=refpos, wts=w)
+		h1_h2 = h1score - h2score
+		features += [h1score, h2score, h1_h2]
+		
 		return features
+
+	def evaluate(self, h1score, h2score):
+		""" Scores hypothesis sentences based on scores
+			Prints output
+		"""
+		if h1score > h2score:
+			print -1
+		elif h1score == h2score:
+			print 0
+		else:
+			print 1
 
 class Retriever:
 	""" Retrieves sentences from the input file """

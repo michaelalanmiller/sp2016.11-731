@@ -12,7 +12,7 @@ class SimpleMeteor:
 		system
 	"""
 
-	def __init__(self, alpha=0.5, beta=0.2):
+	def __init__(self, alpha=0.5, beta=0.13):
 		self.alpha = alpha # tuning parameter for precision and recall
 		self.beta = beta # tuning parameter for tokens and postags
 
@@ -38,7 +38,10 @@ class SimpleMeteor:
 		for wd in hc:
 			if wd in refc:
 				r += min(hc[wd], refc[wd])
-		return r/len(ref)
+		if len(ref) > 0:
+			return r/len(ref)
+		else:
+			return 0.0
 
 	def score(self, h, ref, postags=False, hpos=[], refpos=[]):
 		p = self.unigram_precision(h, ref)
@@ -56,25 +59,6 @@ class SimpleMeteor:
 					score = (1-self.beta)*score
 
 		return score
-
-	def evaluate(self, h1, h2, ref):
-		""" Scores hypothesis sentences based on the reference sentence 
-			Sentences passed in as lists of strings
-		"""
-		h1score = 0
-		h2score = 0
-
-		if len(h1) > 0:
-			h1score = self.score(h1, ref)
-		if len(h2) > 0:
-			h2score = self.score(h2, ref)
-
-		if h1score > h2score:
-			print -1
-		elif h1score == h2score:
-			print 0
-		else:
-			print 1
 
 class Preprocessor:
 
