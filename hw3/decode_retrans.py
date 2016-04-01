@@ -5,6 +5,7 @@ import models
 import heapq
 from collections import namedtuple, defaultdict
 import pdb
+from grade_new import init, sent_logp
 
 
 parser = argparse.ArgumentParser(description='Simple phrase based decoder.')
@@ -81,7 +82,7 @@ def extract_tm_logprob(h):
     return 0.0 if h.predecessor is None else h.phrase.logprob + extract_tm_logprob(h.predecessor)
 
 
-def retrans(winner):
+def retrans(winner, f, sent_num):
     """ Post-processing step to retranslate phrases,
         look at context language model scores and 
         try to improve logprob
@@ -90,6 +91,7 @@ def retrans(winner):
     global lm
 
     phrases = extract_phrases(winner) # List of phrases es-en
+    origphrases = extract_phrases(winner) # List of phrases es-en
     for i, (en, es) in enumerate(phrases):
         prevphrase = ()
         nextphrase = ()
@@ -124,13 +126,37 @@ def retrans(winner):
         phrases[i] = (bestposs, es)
 
     # Compute logprob of whole new best sentence, compare with original
-    origscore = winner.logprob
+    #origscore = sent_prob(winner) + lm.score_phrase(winner)[1]
+    ewds = tuple(sum([p[0].split() for p in origphrases], []))
+    origscore = sent_logp(sent_num, (f, ewds),(tm, lm))
     
-    sent_logprob = 0.0
-    for p in phrases:
-        sent_logprob += p[0].logprob
+    #sent_logprob = 0.0
+    #for p in phrases:
+    #    sent_logprob += p[0].logprob
+    #sent_logprob += lm.score_phrase(tuple([p[0].english for p in phrases]))[1]
+    ewds = tuple(sum([p[0].english.split() for p in phrases], []))
+    #sent_logprob = sent_logp(sent_num, (f, tuple([p[0].english for p in phrases])), (tm, lm))
+    sent_logprob = sent_logp(sent_num, (f, ewds), (tm, lm))
 
-    return phrases
+    if sent_logprob > origscore:
+        return [p[0].english for p in phrases]
+    else:
+        return [p[0] for p in origphrases]
+
+def sent_prob(sent):
+    """ Estimate log probability of a sentence 
+        Sent is a hypothesis
+    """
+
+    if not sent.predecessor: 
+        if sent.phrase:
+            score = sent.phrase.logprob
+        else:
+            score = 0.0
+    else: 
+        score = sent.phrase.logprob + sent_prob(sent.predecessor)
+
+    return score
 
 def precompute_span_future_logprob(f):
     span_future_logprob = defaultdict(lambda: defaultdict(float))
@@ -192,7 +218,7 @@ for f in input_sents:
     print ' '.join(result)
 '''
 
-for f in input_sents:
+for sent_num, f in enumerate(input_sents):
     N = len(f)
     stacks = [{} for _ in f] + [{}]
 
@@ -244,10 +270,9 @@ for f in input_sents:
     winner = max(stacks[-1].itervalues(), key=lambda h: h.logprob)
 
     # Second pass: try to transform winner
-    #phrases = retrans(winner)
+    phrases = retrans(winner, f, sent_num)
 
-    print ' '.join([p[0].english for p in phrases])
-
+    print ' '.join(phrases)
     #print extract_english_recursive(winner)
 
     if opts.verbose:

@@ -22,23 +22,15 @@ def logadd(x,y):
     # Addition in logspace: if x=log(a) and y=log(b), return log(a+b) #
     return x + math.log(1 + math.exp(y-x)) if y < x else y + math.log(1 + math.exp(x-y))
 
-parser = argparse.ArgumentParser(description='Compute unnormalized translation probability by marginalizing over alignments.')
-parser.add_argument('-i', '--input', dest='input', default='data/input', help='File containing sentences to translate (default=data/input)')
-parser.add_argument('-t', '--translation-model', dest='tm', default='data/tm', help='File containing translation model (default=data/tm)')
-parser.add_argument('-l', '--language-model', dest='lm', default='data/lm', help='File containing ARPA-format language model (default=data/lm)')
-opts = parser.parse_args()
+def init(tmpath, lmpath):
+    tm = models.TM(opts.tm,sys.maxint)
+    lm = models.LM(opts.lm)
 
-tm = models.TM(opts.tm,sys.maxint)
-lm = models.LM(opts.lm)
-french_sents = [tuple(line.strip().split()) for line in open(opts.input).readlines()]
-english_sents = [tuple(line.strip().split()) for line in sys.stdin]
-if (len(french_sents) != len(english_sents)):
-    sys.stderr.write("ERROR: French and English files are not the same length! Only complete output can be graded!\n")
-    sys.exit(1)
+    return tm, lm
 
-total_logprob = 0.0
-unaligned_sentences = 0
-for sent_num, (f, e) in enumerate(zip(french_sents, english_sents)):
+def sent_logp(sent_num, (f,e), (tm, lm)):
+    """ f and e tuples of words """
+
     sent_logprob = 0.0
     # compute p(e) under the LM
     lm_state = lm.begin()
@@ -78,20 +70,39 @@ for sent_num, (f, e) in enumerate(zip(french_sents, english_sents)):
                     else:
                         chart[ej][new_v] = sums[v]+logprob
 
-    #lines = sys.stdin.readlines()
-    #sys.stdin = open('/dev/tty')
-    #pdb.set_trace()
-
     goal = coverage(range(len(f)))
     if goal in chart[len(e)]:
         sent_logprob += chart[len(e)][goal]
-        total_logprob += sent_logprob
     else:
         sys.stderr.write("ERROR: COULD NOT ALIGN SENTENCE %d\n" % sent_num)
-        unaligned_sentences += 1
+        #unaligned_sentences += 1
 
-if unaligned_sentences > 0:
-    sys.stderr.write("ERROR: There were %d unaligned sentences! Only sentences that align under the model can be graded!\n" % unaligned_sentences)
+    return sent_logprob
 
-sys.stdout.write("%f\n" % total_logprob)
+def main():
+    parser = argparse.ArgumentParser(description='Compute unnormalized translation probability by marginalizing over alignments.')
+    parser.add_argument('-i', '--input', dest='input', default='data/input', help='File containing sentences to translate (default=data/input)')
+    parser.add_argument('-t', '--translation-model', dest='tm', default='data/tm', help='File containing translation model (default=data/tm)')
+    parser.add_argument('-l', '--language-model', dest='lm', default='data/lm', help='File containing ARPA-format language model (default=data/lm)')
+    opts = parser.parse_args()
 
+    tm = models.TM(opts.tm,sys.maxint)
+    lm = models.LM(opts.lm)
+    french_sents = [tuple(line.strip().split()) for line in open(opts.input).readlines()]
+    english_sents = [tuple(line.strip().split()) for line in sys.stdin]
+    if (len(french_sents) != len(english_sents)):
+        sys.stderr.write("ERROR: French and English files are not the same length! Only complete output can be graded!\n")
+        sys.exit(1)
+
+    total_logprob = 0.0
+    unaligned_sentences = 0
+    for sent_num, (f, e) in enumerate(zip(french_sents, english_sents)):
+
+        total_logprob += sent_logp(sent_num, (f,e))
+
+    if unaligned_sentences > 0:
+        sys.stderr.write("ERROR: There were %d unaligned sentences! Only sentences that align under the model can be graded!\n" % unaligned_sentences)
+
+    sys.stdout.write("%f\n" % total_logprob)
+
+if __name__ == '__main__': main()
