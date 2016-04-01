@@ -1,0 +1,225 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+import argparse
+import sys, re
+import pdb
+import codecs
+import locale
+
+class ParseError(Exception):
+    pass
+
+# Tokenize a string.
+# Tokens yielded are of the form (type, string)
+# Possible values for 'type' are '(', ')' and 'WORD'
+def tokenize(s):
+    toks = re.compile(' \n+|[\w\.%?¿,]+|[()]', re.UNICODE)
+    for match in toks.finditer(s):
+        s = match.group(0)
+        if s[0] in ' \n':
+            continue
+        if s[0] in '()':
+            yield (s, s)
+        else:
+            yield ('WORD', s)
+
+def parse_root(toks):
+    ty, _ = next(toks)
+    if ty != '(': raise ParseError
+    return parse_inner(toks)
+
+def parse_inner(toks):
+    """ Parse sentence tokens, creating tree nodes when can"""
+    rootty, name = next(toks) # save the word inside the paren
+    #if name == u'ft':
+    #    pdb.set_trace()
+    if rootty != 'WORD': raise ParseError
+    children = []
+    while True:
+        ty, s = next(toks) # is a paren or terminal
+        if ty == '(':
+            children.append(parse_inner(toks))
+        elif ty == ')':
+            return Tree(name, children) 
+        elif ty == 'WORD':
+            children.append(Tree(s)) # terminal word
+
+class Tree(object):
+    "Generic tree node."
+
+    def __init__(self, name='root', children=None):
+        self.name = name
+        self.children = []
+        if children is not None:
+            for child in children:
+                self.add_child(child)
+
+    def __repr__(self):
+        out = "(" + self.name.encode('utf8')
+        for c in self.children:
+            out += " " + c.__repr__()
+        out += ")"
+            #return "{:s}: {:s}".format(self.name.encode('utf8'), [c.name for c in self.children])
+        return out
+
+    def __eq__(self, other):
+        if self.name == other.name and self.children == other.children:
+            return True
+        else: return False
+
+    def __ne__(self, other):
+        if self.name != other.name and self.children != other.children:
+            return True
+        else: return False
+
+    def add_child(self, node):
+        assert isinstance(node, Tree)
+        self.children.append(node)
+    
+def reorder(sent_tree):
+    """ Reorders a sentence tree based on rules """
+    reo = adjswap(sent_tree)
+    return reo
+
+def adjswap(stree):
+    """ Switches adjectives and the nouns they modify in a sentence tree 
+        Pattern: grup.nom (nc* terminal) ... (aq* terminal)
+        Just change the terminals and immediate nonterminals
+    """
+    
+    topmatches = searchtree(stree, r'grup\.nom') # Want closest grup.nom
+    newtree = stree # I think isn't a deep copy, just a reference
+    for m in topmatches:
+        newm = m
+        # Check if terminal directly after noun in same constituent is adjective
+        noun = None
+
+        # Find noun
+        for c in m.children:
+            if re.match(r'nc\d', c.name):
+                if len(c.children) == 1: 
+                    noun = c
+                else: print "Weird error"
+
+        # Find adj/s
+        adjs = []
+        for c in m.children[1:]:
+            adjs = searchtree(c, r'aq\d', stopname=u'grup.nom') 
+    
+        # Swap in m
+        # Assuming noun is the first group
+        if noun and adjs:
+            newm = swapnode(m, noun, adjs[0]) # Will have to replace to handle multiple adjs--probs build a new node with all adjs in reverse order
+
+        if newm != m:
+            replacenode(newtree, m, newm) 
+
+    return newtree
+
+
+def searchtree(tree, nodename, stopname=''):
+    """ Nodename is pattern to match.
+        Searches recursively through tree to find all node matches
+        If find stopname, stops searching
+    """
+    matches = []
+    if re.match(nodename, tree.name):
+        matches.append(tree)
+    for c in tree.children:
+        cmatches = []
+        if c.name != stopname:
+            cmatches = searchtree(c, nodename, stopname)
+        if cmatches:
+            matches.extend(cmatches)
+
+    return matches
+
+
+def swapnode(tree, node0, node1):
+    """ Swaps two nodes in a tree
+    """
+
+    if tree == node0: return node1
+    elif tree == node1: return node0
+
+    else:
+        newtree = tree
+        for i, c in enumerate(tree.children):
+            newtree.children[i] = swapnode(c, node0, node1)
+
+    return newtree
+
+
+def replacenode(tree, matchnode, replacement):
+    """ Replaces first found example of a node with another node
+    """
+
+    if tree == matchnode:
+        return replacement
+
+    else:
+        newtree = tree
+        for i, c in enumerate(tree.children):
+            newtree.children[i] = replacenode(c, matchnode, replacement)
+
+    return newtree
+
+
+def terminals(tree):
+    """ Reads in a tree and returns terminals """
+    
+    sent = []
+    if not tree.children:
+        sent.append(tree.name) # leaf node
+    else:
+        for c in tree.children:
+            ct = terminals(c)
+            if ct: sent.extend(ct)
+
+    return sent
+
+
+def main():
+    """ Reorder parsed input sentences based on rules """
+
+    parser = argparse.ArgumentParser(description='Input rule-based reordering')
+    parser.add_argument('-i', '--input', dest='input', default='data/input.parsed', help='File containing sentences to translate (default=data/input)')
+    parser.add_argument('-n', '--num_sentences', dest='num_sents', default=sys.maxint, type=int, help='Number of sentences to decode (default=no limit)')
+    parser.add_argument('-v', '--verbose', dest='verbose', action='store_true', help='Verbose: prints original and reordered sentences and trees')
+    parser.set_defaults(verbose=False)
+    opts = parser.parse_args()
+
+    sys.stderr.write('Reordering %s...\n' % (opts.input,))
+    input_sents = open(opts.input).read().decode('utf8').split('\n\n')[:opts.num_sents]
+
+    sents_tree = []
+    for f in input_sents:
+        sent_tree = parse_root(tokenize(f.strip()))
+        sents_tree.append(sent_tree)
+
+    reo_sents = []
+    for s in sents_tree:
+        reo_sents.append(reorder(s))
+
+    if opts.verbose:
+        print "ORIGINAL:"
+        for t in sents_tree:
+            print ' '.join(terminals(t))
+            print t
+            print ""
+
+        print "REORDERED:"
+        for t in reo_sents:
+            print ' '.join(terminals(t))
+            print t
+            print ""
+    
+    else:
+        # Wrap sys.stdout into a StreamWriter to allow writing unicode.
+        sys.stdout = codecs.getwriter(locale.getpreferredencoding())(sys.stdout)
+        for t in reo_sents:
+            print ' '.join(terminals(t))
+
+if __name__ == '__main__':
+    main()

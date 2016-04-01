@@ -1,0 +1,1942 @@
+(ROOT
+  (sentence
+    (sn
+      (spec (da0000 el))
+      (grup.nom (nc0s000 ejército)
+        (s.a
+          (grup.a (aq0000 turco)))))
+    (neg (rn no))
+    (grup.verb (vmip000 tiene))
+    (S
+      (participi (aq0000 interés))
+      (sp
+        (prep (sp000 en))
+        (S
+          (infinitiu (vmn0000 correr))
+          (sn
+            (spec (da0000 los))
+            (grup.nom (nc0p000 riesgos)
+              (S
+                (relatiu (pr000000 que))
+                (grup.verb (vmic000 entraña))
+                (sn
+                  (spec (da0000 la))
+                  (grup.nom (nc0s000 participación)
+                    (sp
+                      (prep (sp000 en))
+                      (sn
+                        (spec (da0000 las))
+                        (grup.nom (nc0p000 luchas)
+                          (S
+                            (participi (aq0000 sectarias))
+                            (sp
+                              (prep (sp000 en))
+                              (sn
+                                (spec (da0000 el))
+                                (grup.nom (np00000 iraq))))))))))))))))
+    (fp .)))
+
+(ROOT
+  (sentence
+    (grup.verb (vmis000 erdogan))
+    (S
+      (neg (rn no))
+      (grup.verb (vmip000 tiene))
+      (S
+        (grup.verb (vmsp000 intención) (sp000 de)
+          (infinitiu (vmn0000 dejar)
+            (morfema.pronominal (p0000000 se))
+            (infinitiu (vmn0000 arrastrar))))
+        (sp
+          (prep (sp000 hasta))
+          (sn
+            (spec (dd0000 esa))
+            (grup.nom (nc0s000 trampa))))))
+    (fp .)))
+
+(ROOT
+  (sentence
+    (S
+      (sn
+        (spec (da0000 el))
+        (grup.nom
+          (s.a
+            (grup.a (aq0000 pequeño)))
+          (nc0s000 costo)
+          (S
+            (participi (aq0000 impuesto))
+            (sp
+              (prep (sp000 a))
+              (sn
+                (grup.nom
+                  (S
+                    (relatiu (pr000000 quienes))
+                    (neg (rn no))
+                    (grup.verb (vmip000 votan)))))))))
+      (grup.verb (vmip000 hace))
+      (S
+        (conj (cs que))
+        (grup.verb (vmsp000 resulte))
+        (s.a
+          (grup.a (aq0000 racional)
+            (sp
+              (prep (sp000 para))
+              (sn
+                (spec (di0000 todo) (da0000 el))
+                (grup.nom (nc0s000 mundo))))))
+        (S
+          (infinitiu (vmn0000 votar)))))
+    (conj (cc y))
+    (S
+      (sp
+        (prep (sp000 a))
+        (sn
+          (spec (da0000 el) (di0000 mismo))
+          (grup.nom (nc0s000 tiempo))))
+      (grup.verb (vmip000 establece))
+      (sn
+        (spec (di0000 una))
+        (grup.nom (nc0s000 norma)
+          (s.a
+            (grup.a (aq0000 social)))))
+      (sp
+        (prep (sp000 de))
+        (sn
+          (grup.nom (nc0s000 votación)))))
+    (fp .)))
+
+(ROOT
+  (sentence
+    (sn
+      (spec (da0000 los))
+      (grup.nom (nc0p000 australianos)))
+    (grup.verb (vmip000 quieren))
+    (S
+      (infinitiu (vsn0000 ser))
+      (S
+        (participi (aq0000 obligados))
+        (sp
+          (prep (sp000 a))
+          (S
+            (infinitiu (vmn0000 votar))))))
+    (fp .)))
+
+(ROOT
+  (sentence
+    (S
+      (participi (aq0000 además)))
+    (fc ,)
+    (S
+      (sn
+        (spec (di0000 un))
+        (grup.nom (nc0s000 ambiente)
+          (s.a
+            (grup.a (aq0000 empresarial)))
+          (s.a
+            (grup.a
+              (grup.a (aq0000 inflexible))
+              (conj (cc y))
+              (grup.a (aq0000 desfavorable))))
+          (sp
+            (prep (sp000 para))
+            (sn
+              (spec (da0000 la))
+              (grup.nom (nc0s000 familia))))))
+      (sadv
+        (grup.adv (rg ya)))
+      (neg (rn no))
+      (grup.verb (vsip000 es))
+      (S
+        (sn
+          (spec (da0000 la))
+          (grup.nom (nc0s000 única)))
+        (grup.verb (vmsp000 opción))
+        (sp
+          (prep (sp000 para))
+          (sn
+            (spec (da0000 las))
+            (grup.nom (nc0p000 mujeres)
+              (S
+                (relatiu (pr000000 que))
+                (grup.verb (vmip000 trabajan))))))))
+    (fp .)))
+
+(ROOT
+  (sentence
+    (sp
+      (prep
+        (grup.prep
+          (prep (sp000 a))
+          (sn
+            (spec (da0000 lo))
+            (grup.nom
+              (s.a
+                (grup.a (aq0000 largo)))))
+          (prep (sp000 de))))
+      (sn
+        (spec (da0000 el))
+        (grup.nom (nc0s000 último)
+          (s.a
+            (grup.a
+              (grup.a (aq0000 año))
+              (conj (cc y))
+              (grup.a (pn000000 medio))))))
+      (fc ,))
+    (grup.verb (vmis000 llegaron))
+    (sp
+      (prep (sp000 a))
+      (sn
+        (spec (da0000 el) (z0 1,8))
+        (grup.nom (nc0s000 billón)
+          (sp
+            (prep (sp000 de))
+            (sn
+              (grup.nom (nc0p000 dólares))))))
+      (fc ,))
+    (sp
+      (prep (sp000 con))
+      (sadv
+        (grup.adv (rg mucho))))
+    (sn
+      (spec (da0000 las))
+      (grup.nom
+        (s.a
+          (grup.a (aq0000 mayores)))))
+    (sp
+      (prep (sp000 de))
+      (sn
+        (spec (da0000 el))
+        (grup.nom (nc0s000 mundo))))
+    (fp .)))
+
+(ROOT
+  (sentence
+    (sp
+      (prep (sp000 sin))
+      (sn
+        (grup.nom (nc0s000 embargo)))
+      (fc ,))
+    (sn
+      (spec (da0000 la))
+      (grup.nom (nc0s000 paradoja)))
+    (grup.verb (vsip000 es))
+    (S
+      (conj (cs que))
+      (sn
+        (spec (da0000 las))
+        (grup.nom (nc0p000 reservas)
+          (sp
+            (prep (sp000 de))
+            (sadv
+              (grup.adv (rg hoy))))))
+      (neg (rn no))
+      (grup.verb (vsip000 son) (vmp0000 riquezas))
+      (s.a
+        (grup.a (aq0000 reales)))
+      (S
+        (conj (cs que))
+        (morfema.pronominal (p0000000 se))
+        (grup.verb (vmsp000 puedan)
+          (infinitiu (vmn0000 utilizar)))))
+    (sp
+      (prep (sp000 para))
+      (S
+        (infinitiu (vmn0000 estimular))
+        (sn
+          (grup.nom (pp000000 la)))
+        (S
+          (grup.verb (vmii000 economía))
+          (s.a
+            (grup.a (aq0000 local))))))
+    (fp .)))
+
+(ROOT
+  (sentence
+    (S
+      (sn
+        (spec (da0000 lo))
+        (grup.nom (nc0p000 más)
+          (s.a
+            (grup.a (aq0000 probable)))))
+      (grup.verb (vsip000 es))
+      (S
+        (conj (cs que))
+        (grup.verb (vmii000 eeuu))
+        (sadv
+          (spec (rg experimente))
+          (grup.adv (di0000 un) (rg tanto)))
+        (sp
+          (prep (sp000 de))
+          (sn
+            (grup.nom (nc0s000 desaceleración))))))
+    (S (fc ,)
+      (conj (cs como))
+      (grup.verb (vmii000 ocurrió))
+      (sp
+        (prep (sp000 en))
+        (sn
+          (spec (da0000 la))
+          (grup.nom (nc0s000 recesión)
+            (s.a
+              (grup.a (aq0000 ligera)))
+            (sp
+              (prep (sp000 de))
+              (sn
+                (spec (da0000 los))
+                (grup.nom (nc0p000 últimos)))))))
+      (sn
+        (spec (dn0000 dos))
+        (grup.nom (nc0p000 años))))
+    (fp .)))
+
+(ROOT
+  (sentence
+    (sp
+      (prep (sp000 sin))
+      (sn
+        (grup.nom (nc0s000 embargo)))
+      (fc ,))
+    (neg (rn no))
+    (grup.verb (vmip000 vemos))
+    (S
+      (conj (cs que))
+      (morfema.verbal (p0000000 se))
+      (grup.verb (vmsp000 adopten))
+      (sn
+        (spec (da0000 los))
+        (grup.nom (nc0p000 impuestos)))
+      (sp
+        (prep (sp000 a))
+        (sn
+          (spec (da0000 el))
+          (grup.nom (nc0s000 carbono)))))
+    (fp .)))
+
+(ROOT
+  (sentence
+    (sn
+      (spec (da0000 lo))
+      (grup.nom
+        (S
+          (relatiu (pr000000 que))
+          (grup.verb (vmii000 sí))
+          (S
+            (grup.verb (vmip000 sabemos))))))
+    (grup.verb (vsip000 es))
+    (S
+      (conj (cs que))
+      (sn
+        (spec (da0000 las))
+        (grup.nom (nc0p000 autoridades)
+          (s.a
+            (grup.a (aq0000 chinas)))))
+      (sadv
+        (grup.adv (rg nunca)))
+      (grup.verb (vmis000 enfrentaron))
+      (sn
+        (spec (di0000 un))
+        (grup.nom (nc0s000 desafío)
+          (sp
+            (prep (sp000 de))
+            (sn
+              (spec (dd0000 esta))
+              (grup.nom (nc0s000 magnitud))))))
+      (sp
+        (prep (sp000 con))
+        (sn
+          (spec (di0000 un))
+          (grup.nom (nc0s000 potencial)
+            (s.a
+              (grup.a (aq0000 semejante)))))))
+    (sp
+      (prep (sp000 para))
+      (S
+        (infinitiu (vmn0000 hacer))
+        (sn
+          (grup.nom (pp000000 le)))
+        (S
+          (S
+            (infinitiu (vmn0000 ganar)))
+          (conj (cc o))
+          (S
+            (infinitiu (vmn0000 perder))
+            (sn
+              (grup.nom (nc0s000 prestigio)))))))
+    (fp .)))
+
+(ROOT
+  (sentence
+    (S
+      (sn
+        (spec (di0000 todo))
+        (grup.nom (pd000000 esto)))
+      (grup.verb (vmip000 plantea))
+      (sn
+        (spec (da0000 la))
+        (grup.nom (nc0s000 interrogante)
+          (sp
+            (prep (sp000 de))
+            (S
+              (conj (cs si))
+              (sn
+                (grup.nom
+                  (s.a
+                    (grup.a (aq0000 china)))))
+              (grup.verb (vmsi000 terminará))
+              (sp
+                (prep (sp000 por))
+                (S
+                  (infinitiu (vmn0000 reemplazar))
+                  (sp
+                    (prep (sp000 a))
+                    (sn
+                      (grup.nom (nc0p000 estados)
+                        (S
+                          (participi (aq0000 unidos))
+                          (sp
+                            (prep (cs como))
+                            (sn
+                              (grup.nom (nc0s000 potencia)
+                                (s.a
+                                  (grup.a (aq0000 hegemónica)))
+                                (s.a
+                                  (grup.a (aq0000 mundial)))))))
+                        (S
+                          (relatiu (pr000000 que))
+                          (grup.verb (vmip000 define)))))))))))))
+    (conj (cc y))
+    (S
+      (grup.verb (vmip000 aplica))
+      (S
+        (sn
+          (spec (da0000 las))
+          (grup.nom (nc0p000 reglas)
+            (sp
+              (prep (sp000 de))
+              (sn
+                (grup.nom (pp000000 la))))))
+        (grup.verb (vmii000 economía))
+        (s.a
+          (grup.a (aq0000 global)))))
+    (fp .)))
+
+(ROOT
+  (sentence
+    (S
+      (sn
+        (grup.nom (pd000000 esto)))
+      (grup.verb (vsip000 es))
+      (s.a
+        (grup.a (aq0000 insostenible)))
+      (fc ,))
+    (conj (cc y))
+    (S
+      (sadv
+        (grup.adv
+          (grup.adv (rg tarde))
+          (conj (cc o))
+          (grup.adv (rg temprano))))
+      (grup.verb (vmii000 precipitará))
+      (sn
+        (spec (di0000 una))
+        (grup.nom (nc0s000 confrontación)
+          (sp
+            (prep (sp000 de))
+            (sn
+              (grup.nom (nc0p000 proporciones))))))
+      (sp
+        (prep (sp000 con))
+        (sn
+          (grup.nom (nc0p000 estados)
+            (s.a
+              (s.a
+                (grup.a (aq0000 unidos)))
+              (fpa =LRB=)
+              (conj (cc y))
+              (s.a
+                (grup.a (aq0000 europa)))
+              (fpt =RRB=))))))
+    (fp .)))
+
+(ROOT
+  (sentence
+    (sadv
+      (grup.adv (rg cuanto)))
+    (S
+      (sn
+        (grup.nom (nc0p000 más)
+          (s.a
+            (grup.a (aq0000 centralizado)))))
+      (grup.verb (vmii000 esté))
+      (sn
+        (spec (da0000 el))
+        (grup.nom (nc0s000 poder)
+          (s.a
+            (s.a
+              (grup.a (aq0000 político)))
+            (fc ,)
+            (S
+              (participi (aq0000 más)))))))
+    (grup.verb (vmii000 podrá))
+    (S
+      (infinitiu (vmn0000 obstaculizar))
+      (sn
+        (spec (da0000 la))
+        (grup.nom (nc0s000 autoridad)
+          (s.a
+            (grup.a (aq0000 central)))))
+      (sn
+        (spec (da0000 el))
+        (grup.nom (nc0s000 desarrollo)
+          (sp
+            (prep (sp000 de))
+            (sn
+              (spec (da0000 los))
+              (grup.nom (nc0p000 mercados)))))))
+    (fp .)))
+
+(ROOT
+  (sentence
+    (sp
+      (prep (sp000 en))
+      (sn
+        (grup.nom (nc0s000 cambio)))
+      (fc ,))
+    (sn
+      (spec (da0000 la))
+      (grup.nom (nc0s000 integración)
+        (s.a
+          (grup.a (aq0000 política)))))
+    (grup.verb (vmic000 podría))
+    (S
+      (infinitiu (vmn0000 tener))
+      (sn
+        (spec (di0000 un))
+        (grup.nom (nc0s000 efecto)
+          (S
+            (participi (aq0000 opuesto))
+            (sp
+              (prep (sp000 en))
+              (sn
+                (spec (da0000 el))
+                (grup.nom (nc0s000 desarrollo)
+                  (sp
+                    (prep (sp000 de))
+                    (sn
+                      (spec (da0000 los))
+                      (grup.nom (nc0p000 mercados)))))))))))
+    (fp .)))
+
+(ROOT
+  (sentence
+    (conj (cc pero))
+    (sadv
+      (grup.adv (rg ahora)))
+    (grup.verb (vmip000 parece))
+    (S
+      (S
+        (conj (cs que))
+        (sn
+          (spec (dd0000 este))
+          (grup.nom (nc0p000 país)))
+        (morfema.verbal (p0000000 se))
+        (grup.verb (vaip000 ha) (vmp0000 metido))
+        (sp
+          (prep (sp000 en))
+          (sn
+            (grup.nom (nc0p000 problemas)
+              (sadv
+                (grup.adv (rg nuevamente)))))))
+      (conj (cc y))
+      (S
+        (grup.verb (vmsp000 también))
+        (S
+          (grup.verb (vmip000 desea))
+          (S
+            (infinitiu (vmn0000 debilitar))
+            (sn
+              (spec (da0000 el))
+              (grup.nom (nc0s000 pacto)))))))
+    (fp .)))
+
+(ROOT
+  (sentence
+    (conj (cc y))
+    (sn
+      (grup.nom
+        (s.a
+          (grup.a (aq0000 china)))
+        (sp (fc ,)
+          (prep (sp000 por))
+          (sn
+            (spec (dp0000 su))
+            (grup.nom (nc0s000 parte)))
+          (fc ,))))
+    (S
+      (grup.verb (vmii000 seguirá))
+      (S
+        (gerundi (vmg0000 desarrollando))
+        (sn
+          (sn
+            (spec (dp0000 sus))
+            (grup.nom (nc0p000 mercados)
+              (s.a
+                (grup.a (aq0000 financieros)))))
+          (conj (cc y))
+          (sn
+            (spec (dp0000 su))
+            (grup.nom (nc0s000 capacidad)))))
+      (sp
+        (prep (sp000 de))
+        (S
+          (infinitiu (vmn0000 generar))
+          (sn
+            (grup.nom (nc0p000 activos)
+              (s.a
+                (grup.a (aq0000 financieros)))
+              (sp
+                (prep (sp000 de))
+                (sn
+                  (grup.nom
+                    (s.a
+                      (grup.a (aq0000 alta)))
+                    (nc0s000 calidad))))))
+          (sadv
+            (grup.adv (rg internamente))))))
+    (fp .)))
+
+(ROOT
+  (sentence
+    (sadv
+      (grup.adv (rg claramente))
+      (fc ,))
+    (grup.verb (vsip000 es))
+    (s.a
+      (grup.a (aq0000 preferible)))
+    (S
+      (sn
+        (spec (da0000 la))
+        (grup.nom
+          (s.a
+            (grup.a (ao0000 segunda)))))
+      (grup.verb (vmis000 opción)))
+    (fp .)))
+
+(ROOT
+  (sentence
+    (sn
+      (sn
+        (spec (da0000 la))
+        (grup.nom (nc0n000 crisis)
+          (s.a
+            (grup.a (aq0000 financiera)))
+          (s.a
+            (grup.a (aq0000 asiática)))))
+      (conj (cc y))
+      (sn
+        (spec (da0000 la))
+        (grup.nom (vmsp000 devaluación)
+          (S
+            (participi (aq0000 brasileña))
+            (sp
+              (prep (sp000 a))
+              (sn
+                (grup.nom (nc0p000 principios)
+                  (sp
+                    (prep (sp000 de))
+                    (sn
+                      (grup.nom (w 1999)))))))))))
+    (grup.verb (vmis000 hicieron))
+    (S
+      (conj (cs que))
+      (sn
+        (spec (da0000 el))
+        (grup.nom (nc0s000 peso)
+          (s.a
+            (grup.a (aq0000 argentino)))))
+      (grup.verb (vmsi000 estuviera))
+      (s.a
+        (spec (rg decididamente))
+        (grup.a (aq0000 sobrevaluado))))
+    (fp .)))
+
+(ROOT
+  (sentence
+    (grup.verb (vmii000 había))
+    (S
+      (participi (aq0000 acumulado)))
+    (sn
+      (sn
+        (spec (di0000 un))
+        (grup.nom (nc0s000 déficit)
+          (sp
+            (prep (sp000 de))
+            (sn
+              (grup.nom (359000 cuenta))))
+          (s.a
+            (grup.a (aq0000 corriente)))))
+      (conj (cc y))
+      (sn
+        (spec (di0000 una))
+        (grup.nom (nc0s000 carga)
+          (sp
+            (prep (sp000 de))
+            (sn
+              (grup.nom (nc0s000 deuda)
+                (s.a
+                  (grup.a (aq0000 externa)))
+                (S
+                  (relatiu (pr000000 que))
+                  (grup.verb (vsii000 eran))
+                  (sadv
+                    (grup.adv (rg literalmente)))
+                  (sp
+                    (prep (sp000 de))
+                    (sn
+                      (grup.nom (nc0p000 proporciones)
+                        (s.a
+                          (grup.a (aq0000 griegas)))))))))))))
+    (fp .)))
+
+(ROOT
+  (sentence
+    (S
+      (sn
+        (spec (di0000 todo))
+        (grup.nom (pd000000 esto)))
+      (grup.verb (vaip000 ha) (vsp0000 sido))
+      (sn
+        (grup.nom
+          (s.a
+            (grup.a (aq0000 posible)))
+          (nc0p000 gracias)
+          (sp
+            (prep (sp000 a))
+            (sn
+              (grup.nom (pp000000 lo))))
+          (S
+            (relatiu (pr000000 que))
+            (morfema.verbal (p0000000 se))
+            (grup.verb (vaip000 ha) (vmp0000 considerado)))))
+      (fc ,))
+    (S
+      (participi (aq0000 vistos))
+      (sn
+        (spec (da0000 los))
+        (grup.nom (nc0p000 parámetros)
+          (s.a
+            (grup.a (aq0000 históricos)))))
+      (sp (fc ,)
+        (prep (cs como))
+        (sn
+          (spec (di0000 un))
+          (grup.nom (nc0s000 período)
+            (s.a
+              (grup.a (aq0000 excepcional)))
+            (sp
+              (prep (sp000 de))
+              (sn
+                (grup.nom (nc0s000 estabilidad))))
+            (S
+              (participi (aq0000 política)))))))
+    (fp .)))
+
+(ROOT
+  (sentence
+    (sadv
+      (sp
+        (prep (sp000 hasta))
+        (sadv
+          (grup.adv (rg ahora)))
+        (fc ,))
+      (conj (cc ni))
+      (sadv
+        (grup.adv
+          (grup.adv
+            (sp
+              (prep (sp000 en))
+              (sn
+                (grup.nom (nc0s000 camerún)))))
+          (conj (cc ni))
+          (grup.adv
+            (sp
+              (prep (sp000 en))
+              (sn
+                (grup.nom (nc0s000 chad)))))))
+      (fc ,))
+    (sn
+      (spec (da0000 los))
+      (grup.nom (nc0p000 gobiernos)))
+    (grup.verb (vaip000 han) (vmp0000 estado))
+    (S
+      (participi (aq0000 dispuestos))
+      (sp
+        (prep (sp000 a))
+        (S
+          (infinitiu (vmn0000 publicar))
+          (S
+            (grup.verb (vmsp000 ningún))
+            (sn
+              (grup.nom (nc0s000 registro)
+                (sp
+                  (prep (sp000 de))
+                  (sn
+                    (grup.nom (nc0p000 ingresos)
+                      (s.a
+                        (grup.a (aq0000 relativos))))))))
+            (sp
+              (prep (sp000 a))
+              (sn
+                (spec (da0000 el))
+                (grup.nom (nc0s000 proyecto)
+                  (sp
+                    (prep (sp000 de))
+                    (sn
+                      (spec (da0000 el))
+                      (grup.nom (nc0s000 oleoducto)))))))))))
+    (fp .)))
+
+(ROOT
+  (sentence
+    (S
+      (sp
+        (prep (sp000 para))
+        (S
+          (infinitiu (vmn0000 empezar))
+          (sadv (fc ,)
+            (grup.adv (rg ahora)))))
+      (sn
+        (grup.nom (nc0p000 estados)
+          (s.a
+            (grup.a (aq0000 unidos)))))
+      (grup.verb (vmip000 cuenta))
+      (sp
+        (prep (sp000 con))
+        (sn
+          (spec (di0000 un))
+          (grup.nom
+            (s.a
+              (grup.a (aq0000 verdadero)))
+            (nc0s000 amigo)))))
+    (conj (cc y))
+    (S
+      (participi (aq0000 aliado))
+      (sp
+        (prep (sp000 en))
+        (sn
+          (spec (da0000 el))
+          (grup.nom (nc0s000 palacio)
+            (sp
+              (prep (sp000 de))
+              (sn
+                (spec (da0000 el))
+                (grup.nom (nc0s000 eliseo))))))))
+    (fp .)))
+
+(ROOT
+  (sentence
+    (sn
+      (spec (dd0000 este))
+      (grup.nom (nc0s000 periodo)
+        (sp
+          (prep (sp000 de))
+          (sn
+            (grup.nom (nc0s000 tiempo)
+              (s.a
+                (grup.a (aq0000 daría))))))))
+    (sadv
+      (grup.adv (rg tanto) (sp000 a)))
+    (grup.verb (vmii000 turquía))
+    (S
+      (conj (cs como))
+      (sp
+        (prep (sp000 a))
+        (sn
+          (grup.nom (pp000000 la))))
+      (grup.verb (vmis000 unión))
+      (sn
+        (spec (di0000 una))
+        (grup.nom (nc0s000 oportunidad)
+          (sp
+            (prep (sp000 de))
+            (S
+              (infinitiu (vmn0000 compatibilizar)))))))
+    (fp .)))
+
+(ROOT
+  (sentence
+    (sn
+      (spec (da0000 lo))
+      (grup.nom
+        (S
+          (relatiu (pr000000 que))
+          (grup.verb (vmip000 da))
+          (sn
+            (grup.nom (nc0s000 origen)))
+          (sp
+            (prep (sp000 a))
+            (sn
+              (spec (da0000 las))
+              (grup.nom (nc0p000 emociones)
+                (s.a
+                  (grup.a (aq0000 más)))
+                (s.a
+                  (grup.a (aq0000 fuertes)))))))))
+    (grup.verb (vsip000 es))
+    (sn
+      (spec (da0000 la))
+      (grup.nom (nc0s000 población)
+        (s.a
+          (grup.a (aq0000 musulmana)))))
+    (sp
+      (prep (sp000 de))
+      (S
+        (grup.verb (vmii000 turquía))))
+    (fp .)))
+
+(ROOT
+  (sentence
+    (grup.verb (vmis000 también))
+    (S
+      (morfema.pronominal (p0000000 se))
+      (grup.verb (vmip000 teme))
+      (S
+        (conj (cs que))
+        (sn
+          (spec (di0000 un))
+          (grup.nom
+            (S
+              (grup.verb (vmii000 día))
+              (sn
+                (spec (da0000 los))
+                (grup.nom (nc0p000 islamistas))))))
+        (grup.verb (vmsp000 conviertan))
+        (sp
+          (prep (sp000 a))
+          (S
+            (S
+              (grup.verb (vmii000 turquía))
+              (sp
+                (prep (sp000 en))
+                (sn
+                  (spec (di0000 un))
+                  (grup.nom (nc0s000 estado)))))
+            (sn
+              (grup.nom (nc0s000 fundamentalista)))))))
+    (fp .)))
+
+(ROOT
+  (sentence
+    (sn
+      (spec (da0000 el))
+      (grup.nom (nc0s000 banco)
+        (s.a
+          (grup.a (aq0000 central)))
+        (s.a
+          (grup.a (aq0000 europeo)))
+        (S (fc ,)
+          (participi (aq0000 establecido))
+          (sp
+            (prep (sp000 en))
+            (sn
+              (grup.nom (w 1998))))
+          (fc ,))))
+    (grup.verb (vmip000 tiene))
+    (sn
+      (spec (da0000 el))
+      (grup.nom (nc0s000 mandato)
+        (sp
+          (prep (sp000 de))
+          (S
+            (infinitiu (vmn0000 administrar))
+            (sn
+              (spec (da0000 la))
+              (grup.nom
+                (s.a
+                  (grup.a (aq0000 nueva)))
+                (nc0s000 moneda)
+                (sp
+                  (prep (sp000 para))
+                  (S
+                    (infinitiu (vmn0000 mantener))
+                    (sn
+                      (spec (da0000 la))
+                      (grup.nom (nc0s000 estabilidad)
+                        (sp
+                          (prep (sp000 de))
+                          (sn
+                            (grup.nom (nc0p000 precios))))))))))))))
+    (fp .)))
+
+(ROOT
+  (sentence
+    (sp
+      (prep (sp000 entre))
+      (sn
+        (grup.nom
+          (grup.nom (w 2000))
+          (conj (cc y))
+          (grup.nom (w 2005)))))
+    (sn (fc ,)
+      (spec (da0000 el))
+      (grup.nom
+        (S
+          (infinitiu (vmn0000 dólar)))))
+    (grup.verb (vmii000 perdió))
+    (s.a
+      (grup.a (aq0000 más)
+        (sp
+          (prep (sp000 de))
+          (sn
+            (spec (da0000 el))
+            (grup.nom
+              (grup.z (z0 25) (ft %))
+              (sp
+                (prep (sp000 de))
+                (sn
+                  (spec (dp0000 su))
+                  (grup.nom (nc0s000 valor)))))))))
+    (S
+      (sadv
+        (grup.adv (rg frente)))
+      (sp
+        (prep (sp000 a))
+        (sn
+          (spec (da0000 el))
+          (grup.nom (nc0s000 euro)))))
+    (fp .)))
+
+(ROOT
+  (sentence
+    (sp
+      (prep (sp000 ante))
+      (sn
+        (spec (di0000 una))
+        (grup.nom
+          (s.a
+            (grup.a (aq0000 grave)))
+          (nc0s000 contracción)
+          (s.a
+            (grup.a (aq0000 económica)))))
+      (fc ,))
+    (S
+      (sn
+        (spec (di0000 un))
+        (grup.nom (nc0p000 país)))
+      (grup.verb (vmip000 puede)
+        (infinitiu (vmn0000 desear)))
+      (S
+        (S
+          (infinitiu (vmn0000 aplicar))
+          (sn
+            (spec (di0000 una))
+            (grup.nom
+              (s.a
+                (grup.a (aq0000 política)))
+              (nc0s000 keynesiana)
+              (s.a
+                (grup.a (aq0000 tradicional)))
+              (sp
+                (prep (sp000 mediante))
+                (sn
+                  (grup.nom (nc0p000 estímulos)
+                    (s.a
+                      (grup.a (aq0000 fiscales))))))))
+          (sp
+            (prep (sp000 en))
+            (sn
+              (grup.nom
+                (s.a
+                  (grup.a (aq0000 gran)))
+                (nc0s000 escala)))))
+        (conj (cc y))
+        (S
+          (participi (aq0000 financiados))
+          (sp
+            (prep (sp000 mediante))
+            (sn
+              (grup.nom (nc0s000 déficit)))))))
+    (fp .)))
+
+(ROOT
+  (sentence
+    (sn
+      (grup.nom (nc0p000 además)
+        (sn (fc ,)
+          (sn
+            (spec (da0000 la))
+            (grup.nom
+              (s.a
+                (grup.a (aq0000 actual)))
+              (nc0n000 crisis)))
+          (S
+            (participi (aq0000 económica))))))
+    (grup.verb (vaip000 ha) (vmp0000 hecho))
+    (S
+      (conj (cs que))
+      (morfema.verbal (p0000000 se))
+      (grup.verb (vmsp000 vuelva) (sp000 a)
+        (infinitiu (vmn0000 hablar)))
+      (sp
+        (prep (sp000 de))
+        (sn
+          (spec (da0000 la))
+          (grup.nom (nc0s000 necesidad)
+            (sp
+              (prep (sp000 de))
+              (S
+                (conj (cs que))
+                (sn
+                  (spec (da0000 la))
+                  (grup.nom (nc0s000 unión)
+                    (s.a
+                      (grup.a (aq0000 europea)))))
+                (grup.verb (vmsp000 tenga))
+                (sn
+                  (grup.nom (nc0s000 competencia)
+                    (sp
+                      (prep (sp000 en))
+                      (sn
+                        (grup.nom (nc0s000 materia)
+                          (s.a
+                            (grup.a (aq0000 tributaria))))))))))))))
+    (fp .)))
+
+(ROOT
+  (sentence
+    (sn
+      (spec (da0000 los))
+      (grup.nom (nc0p000 países)
+        (sp
+          (prep (sp000 con))
+          (sn
+            (grup.nom
+              (s.a
+                (grup.a (aq0000 grandes)))
+              (nc0p000 ingresos))))))
+    (grup.verb (vmis000 podrían))
+    (S
+      (infinitiu (vmn0000 considerar))
+      (sn
+        (spec (da0000 la) (di0000 una))
+        (grup.nom (nc0s000 razón)
+          (s.a
+            (grup.a (aq0000 suficiente)))))
+      (sp
+        (prep (sp000 para))
+        (S
+          (infinitiu (vmn0000 desear))
+          (S
+            (infinitiu (vmn0000 retirar))
+            (morfema.pronominal (p0000000 se))))))
+    (fp .)))
+
+(ROOT
+  (sentence
+    (sadv
+      (grup.adv (rg nunca)))
+    (grup.verb (vaip000 ha) (vsp0000 sido))
+    (s.a
+      (grup.a (aq0000 fácil)))
+    (S
+      (infinitiu (vmn0000 llegar))
+      (sp
+        (prep (sp000 a))
+        (sn
+          (grup.nom (nc0p000 acuerdos)
+            (s.a
+              (grup.a (aq0000 económicos)))
+            (s.a
+              (grup.a (aq0000 internacionales)))))))
+    (fp .)))
+
+(ROOT
+  (sentence
+    (sp
+      (prep (sp000 para))
+      (sn
+        (spec (da0000 los))
+        (grup.nom (nc0p000 ciudadanos)
+          (s.a
+            (grup.a (aq0000 jóvenes)))
+          (sn (fc ,)
+            (spec (da0000 los))
+            (grup.nom (nc0p000 islamistas)
+              (sp
+                (prep (sp000 en))
+                (s.a
+                  (grup.a (aq0000 particular)))))
+            (fc ,)))))
+    (sn
+      (spec (da0000 los))
+      (grup.nom (nc0p000 canales)
+        (s.a
+          (grup.a (aq0000 normales)))
+        (sp
+          (prep (sp000 de))
+          (sn
+            (grup.nom (nc0s000 participación))))))
+    (grup.verb (vmic000 política))
+    (S
+      (morfema.pronominal (p0000000 se))
+      (grup.verb (vaip000 han) (vmp0000 cerrado)))
+    (fp .)))
+
+(ROOT
+  (sentence
+    (sadv
+      (grup.adv (rg primero))
+      (fc ,))
+    (S
+      (sn
+        (spec (z0 ¿))
+        (grup.nom
+          (s.a
+            (grup.a (aq0000 cuánta)))
+          (nc0s000 capacidad)
+          (s.a
+            (grup.a (aq0000 convencional)))
+          (sp
+            (prep (sp000 para))
+            (sn
+              (spec (da0000 la))
+              (grup.nom (nc0s000 guerra))))))
+      (grup.verb (vmip000 deben)
+        (infinitiu (vmn0000 conservar)))
+      (sn
+        (spec (da0000 los))
+        (grup.nom (np00000 eu))))
+    (fit ?)))
+
+(ROOT
+  (sentence
+    (S
+      (sn
+        (spec (dd0000 esa))
+        (grup.nom (nc0s000 estrategia)))
+      (grup.verb (vaip000 ha) (vmp0000 perdurado))
+      (sp
+        (prep (sp000 sobre))
+        (sn
+          (spec (di0000 una))
+          (grup.nom (nc0s000 base)
+            (s.a
+              (grup.a (aq0000 bipartidaria))))))
+      (sp
+        (prep (sp000 en))
+        (sn
+          (grup.nom (nc0p000 estados)
+            (S
+              (participi (aq0000 unidos))))))
+      (fc ,))
+    (conj (cc y))
+    (S
+      (sn
+        (spec (da0000 las))
+        (grup.nom (nc0p000 encuestas)))
+      (grup.verb (vmip000 demuestran))
+      (S
+        (conj (cs que))
+        (grup.verb (vmsp000 aún))
+        (S
+          (grup.verb (vmip000 cuenta))
+          (sp
+            (prep (sp000 con))
+            (sn
+              (spec (di0000 una))
+              (grup.nom
+                (s.a
+                  (grup.a (aq0000 amplia)))
+                (nc0s000 aceptación)
+                (sp
+                  (prep (sp000 en))
+                  (sn
+                    (grup.nom (nc0s000 japón))))))))))
+    (fp .)))
+
+(ROOT
+  (sentence
+    (conj
+      (grup.cc (rn no) (aq0000 obstante))
+      (fc ,))
+    (sn
+      (spec (da0000 la))
+      (grup.nom (nc0s000 alianza)))
+    (grup.verb (vmip000 enfrenta))
+    (sn
+      (spec (dn0000 tres))
+      (grup.nom (nc0p000 desafíos)
+        (s.a
+          (grup.a (aq0000 importantes)))))
+    (sp
+      (prep (sp000 en))
+      (sn
+        (spec (di0000 un))
+        (grup.nom
+          (s.a
+            (grup.a (aq0000 nuevo)))
+          (nc0s000 contexto)
+          (s.a
+            (grup.a (aq0000 externo))))))
+    (fp .)))
+
+(ROOT
+  (sentence
+    (sn
+      (grup.nom (np00000 ¿) (np00000 qué)))
+    (grup.verb (vmip000 puede)
+      (infinitiu (vmn0000 evitar)))
+    (sn
+      (sn
+        (grup.nom
+          (S
+            (relatiu (pr000000 que))
+            (sn
+              (spec (da0000 la))
+              (grup.nom (nc0s000 situación)))
+            (sn
+              (grup.nom (pp000000 se)))
+            (grup.verb (vmsp000 deteriore)))
+          (S
+            (participi (aq0000 más)))))
+      (conj (cc y))
+      (sn
+        (grup.nom (vmsp000 acabe)
+          (S
+            (participi (aq0000 quizá))
+            (sp
+              (prep (sp000 en))
+              (sn
+                (spec (di0000 una))
+                (grup.nom (nc0n000 crisis)
+                  (s.a
+                    (grup.a (aq0000 sistémica))))))))))
+    (fit ?)))
+
+(ROOT
+  (sentence
+    (S
+      (S
+        (participi (aq0000 ¿)))
+      (conj (cc pero))
+      (S
+        (sp
+          (prep (sp000 en))
+          (sn
+            (grup.nom (nc0s000 dónde))))
+        (sadv (fc ,)
+          (grup.adv (rg exactamente))
+          (fc ,))
+        (grup.verb (vmii000 está))
+        (sn
+          (spec (da0000 el))
+          (grup.nom (nc0s000 corazón)
+            (S
+              (sp
+                (prep (sp000 de))
+                (sn
+                  (spec (da0000 la))
+                  (grup.nom
+                    (s.a
+                      (grup.a (aq0000 nueva))))))
+              (grup.verb (vmii000 economía)))))))
+    (fit ?)))
+
+(ROOT
+  (sentence
+    (neg (rn no))
+    (grup.verb (vsip000 es))
+    (sp
+      (prep (sp000 de))
+      (S
+        (infinitiu (vmn0000 sorprender))
+        (morfema.pronominal (p0000000 se))
+        (S
+          (conj (cs que))
+          (sn
+            (grup.nom (nc0p000 más)
+              (sp
+                (prep (sp000 de))
+                (sn
+                  (spec (da0000 la))
+                  (grup.nom (nc0s000 mitad)
+                    (sp
+                      (prep (sp000 de))
+                      (sn
+                        (spec (da0000 las))
+                        (grup.nom (nc0p000 empresas)
+                          (s.a
+                            (grup.a (aq0000 más)))
+                          (s.a
+                            (grup.a (aq0000 respetadas)))))))))))
+          (grup.verb (vssp000 sean))
+          (sn
+            (grup.nom (nc0p000 estadounidenses))))))
+    (fp .)))
+
+(ROOT
+  (sentence
+    (S
+      (sn
+        (grup.nom (nc0s000 ¿)
+          (sp
+            (prep (sp000 por))
+            (sn
+              (grup.nom (np00000 qué))))))
+      (grup.verb (vmii000 había))
+      (sp
+        (prep (sp000 de))
+        (S
+          (infinitiu (vmn0000 infundir))
+          (sn
+            (spec (da0000 la))
+            (grup.nom
+              (s.a
+                (grup.a (ao0000 segunda)))
+              (nc0s000 guerra)
+              (s.a
+                (grup.a (aq0000 mundial)))
+              (sn
+                (grup.nom (nc0s000 confianza)))
+              (sn
+                (grup.nom (pi000000 alguna)
+                  (sp
+                    (prep (sp000 en))
+                    (sn
+                      (spec (da0000 el))
+                      (grup.nom (nc0s000 futuro)))))))))))
+    (fit ?)))
+
+(ROOT
+  (sentence
+    (S
+      (grup.verb (vmis000 podrían))
+      (S
+        (infinitiu (vmn0000 tener) (cs que)
+          (infinitiu (vmn0000 eliminar)))
+        (sn
+          (grup.nom (nc0p000 subsidios))))
+      (S
+        (conj (cs que))
+        (grup.verb (vmip000 apuntan))
+        (sp
+          (prep (sp000 a))
+          (sn
+            (grup.nom (nc0p000 fines))))
+        (S
+          (participi (aq0000 equivocados))
+          (sp
+            (prep (sp000 para))
+            (S
+              (infinitiu (vmn0000 liberar))
+              (sn
+                (grup.nom (nc0p000 recursos)
+                  (sp
+                    (prep (sp000 para))
+                    (sn
+                      (grup.nom (nc0p000 programas)
+                        (s.a
+                          (grup.a (aq0000 más)))
+                        (s.a
+                          (grup.a
+                            (grup.a (aq0000 específicos))
+                            (conj (cc y))
+                            (grup.a (aq0000 eficaces))))
+                        (sp
+                          (prep (sp000 de))
+                          (sn
+                            (grup.nom (nc0s000 lucha)))))))))
+              (sp
+                (prep (sp000 contra))
+                (sn
+                  (spec (da0000 la))
+                  (grup.nom (nc0s000 pobreza)))))))))
+    (conj (cc y))
+    (S
+      (grup.verb (vmis000 creación))
+      (sp
+        (prep (sp000 de))
+        (sn
+          (grup.nom (nc0s000 empleo)))))
+    (fp .)))
+
+(ROOT
+  (sentence
+    (grup.verb (vmis000 según))
+    (sn
+      (spec (da0000 el))
+      (grup.nom (nc0s000 programa)
+        (s.a
+          (grup.a (aq0000 mundial)))
+        (sp
+          (prep (sp000 de))
+          (sn
+            (grup.nom (nc0p000 alimentos))))
+        (S (fc ,)
+          (sn
+            (spec (da0000 el))
+            (grup.nom
+              (grup.z (z0 70) (ft %))
+              (sp
+                (prep (sp000 de))
+                (sn
+                  (spec (da0000 la))
+                  (grup.nom (nc0s000 población))))))
+          (grup.verb (vmip000 carece))
+          (sp
+            (prep (sp000 de))
+            (sn
+              (grup.nom (nc0s000 seguridad)
+                (s.a
+                  (grup.a (aq0000 alimentaria)))))))))
+    (fp .)))
+
+(ROOT
+  (sentence
+    (sadv
+      (grup.adv
+        (sp
+          (prep (sp000 en))
+          (sn
+            (grup.nom (nc0s000 teoría)))))
+      (fc ,))
+    (sp
+      (prep (sp000 en))
+      (sn
+        (grup.nom
+          (s.a
+            (grup.a (aq0000 dichas)))
+          (nc0p000 zonas))))
+    (morfema.pronominal (p0000000 se))
+    (grup.verb (vmic000 podría))
+    (S
+      (infinitiu (vmn0000 eliminar))
+      (sn
+        (spec (da0000 la))
+        (grup.nom (nc0s000 mitad)
+          (sadv (fc ,)
+            (grup.adv (rg aproximadamente))
+            (fc ,))
+          (sp
+            (prep (sp000 de))
+            (sn
+              (spec (da0000 el))
+              (grup.nom (nc0s000 desfase)
+                (s.a
+                  (grup.a (aq0000 educativo))))))))
+      (S
+        (gerundi (vmg0000 construyendo))
+        (sn
+          (grup.nom (nc0p000 escuelas)
+            (sp
+              (prep (sp000 para))
+              (sn
+                (grup.nom (nc0p000 niñas))))))))
+    (fp .)))
+
+(ROOT
+  (sentence
+    (morfema.verbal (p0000000 se))
+    (grup.verb (vmip000 calcula))
+    (S
+      (conj (cs que))
+      (sn
+        (spec (da0000 los))
+        (grup.nom (nc0p000 beneficios)))
+      (grup.verb (vmip000 acaban))
+      (S
+        (grup.verb
+          (gerundi (vsg0000 siendo)))
+        (sn
+          (sn
+            (spec (dn0000 seis))
+            (grup.nom (nc0p000 veces)
+              (s.a
+                (grup.a (aq0000 mayores)))))
+          (S
+            (conj (cs que))
+            (sn
+              (spec (da0000 los))
+              (grup.nom (nc0p000 costos)))))))
+    (fp .)))
+
+(ROOT
+  (sentence
+    (sadv
+      (grup.adv (sp000 de) (vmp0000 hecho))
+      (fc ,))
+    (sn
+      (spec (di0000 muchos))
+      (grup.nom (nc0p000 observadores)))
+    (grup.verb (vmip000 creen))
+    (S
+      (conj (cs que))
+      (sn
+        (spec (da0000 las))
+        (grup.nom (nc0p000 mujeres)))
+      (grup.verb (vmis000 determinarán))
+      (sn
+        (spec (da0000 el))
+        (grup.nom (nc0s000 resultado)
+          (s.a
+            (grup.a (aq0000 electoral))))))
+    (fp .)))
+
+(ROOT
+  (sentence
+    (sn
+      (spec (da0000 las))
+      (grup.nom (nc0p000 mujeres)
+        (S
+          (relatiu (pr000000 que))
+          (grup.verb (vmip000 compiten))
+          (sp
+            (prep (sp000 en))
+            (sn
+              (spec (da0000 el))
+              (grup.nom (nc0s000 mercado)
+                (s.a
+                  (grup.a (aq0000 laboral)))))))))
+    (sadv
+      (grup.adv (rg normalmente)))
+    (grup.verb (vmip000 respaldan))
+    (sn
+      (spec (da0000 los))
+      (grup.nom (nc0p000 esfuerzos)))
+    (sp
+      (prep (sp000 por))
+      (S
+        (S
+          (infinitiu (vmn0000 desafiar))
+          (sn
+            (spec (da0000 la) (dn0000 doble))
+            (grup.nom (nc0s000 moral)
+              (s.a
+                (grup.a (aq0000 sexual))))))
+        (conj (cc y))
+        (S
+          (infinitiu (vmn0000 condenar))
+          (sadv
+            (grup.adv (rg enérgicamente)))
+          (sn
+            (spec (da0000 el))
+            (grup.nom (nc0s000 acoso)
+              (s.a
+                (grup.a (aq0000 sexual))))))))
+    (fp .)))
+
+(ROOT
+  (sentence
+    (S
+      (participi (aq0000 después))
+      (sp
+        (prep (sp000 de))
+        (sn
+          (spec (di0000 todo))
+          (grup.nom
+            (S (fc ,)
+              (sn
+                (spec (di0000 algunas))
+                (grup.nom (nc0p000 mujeres)))
+              (grup.verb (vaip000 han) (vmp0000 tenido))
+              (sp
+                (prep (sp000 desde))
+                (sn (vmip000 hace) (rg mucho))))
+            (nc0s000 tiempo)))))
+    (sn
+      (sn
+        (spec (da0000 la))
+        (grup.nom (nc0s000 fuerza)))
+      (conj (cc y))
+      (sn
+        (spec (da0000 la))
+        (grup.nom (nc0s000 voluntad)
+          (sp
+            (prep (sp000 de))
+            (S
+              (infinitiu (vmn0000 llegar))
+              (sp
+                (prep (sp000 a))
+                (sn
+                  (spec (da0000 la))
+                  (grup.nom (nc0s000 cima)))))))))
+    (fp .)))
+
+(ROOT
+  (sentence
+    (sp
+      (prep (cs como))
+      (S
+        (grup.verb (vmsp000 quiera))))
+    (S
+      (conj (cs que))
+      (grup.verb (vssp000 sea))
+      (fc ,))
+    (sn
+      (spec (da0000 los))
+      (grup.nom (nc0p000 sindicatos)))
+    (grup.verb (vsip000 son))
+    (sn
+      (spec (di0000 un))
+      (grup.nom (nc0s000 factor)
+        (sn
+          (grup.nom (nc0s000 clave)
+            (sp
+              (prep (sp000 para))
+              (sn
+                (spec (da0000 la))
+                (grup.nom (nc0s000 evolución))))))))
+    (sp
+      (sp
+        (prep (sp000 de))
+        (sn
+          (spec (dp0000 nuestro))
+          (grup.nom (nc0s000 sistema)
+            (s.a
+              (grup.a (aq0000 económico)))
+            (sp
+              (prep (sp000 en))
+              (sn
+                (grup.nom (w 2008)))))))
+      (conj (cc y))
+      (sp
+        (prep (sp000 en))
+        (sn
+          (spec (da0000 los))
+          (grup.nom (nc0p000 años)
+            (s.a
+              (grup.a (aq0000 venideros)))))))
+    (fp .)))
+
+(ROOT
+  (sentence
+    (neg (rn no))
+    (grup.verb (vaip000 hay))
+    (sn
+      (grup.nom (nc0s000 duda)
+        (sp
+          (prep (sp000 de))
+          (S
+            (conj (cs que))
+            (sn
+              (spec (da0000 el))
+              (grup.nom (nc0s000 mundo)))
+            (grup.verb (vaip000 ha) (vmp0000 visto))
+            (sn
+              (grup.nom (nc0p000 avances)))
+            (sp
+              (prep (sp000 en))
+              (sn
+                (spec (di0000 algunos))
+                (grup.nom (nc0p000 frentes)
+                  (sp
+                    (prep (sp000 en))
+                    (sn
+                      (spec (da0000 las))
+                      (grup.nom (nc0p000 últimas)
+                        (S
+                          (participi (aq0000 décadas)))))))))))))
+    (fp .)))
+
+(ROOT
+  (sentence
+    (sp
+      (prep (sp000 sin))
+      (sn
+        (grup.nom (nc0s000 embargo)))
+      (fc ,))
+    (sp
+      (prep (sp000 en))
+      (s.a
+        (grup.a (aq0000 general))))
+    (sn
+      (spec (da0000 las))
+      (grup.nom (nc0p000 brechas)
+        (sp
+          (prep (sp000 de))
+          (sn
+            (grup.nom (nc0s000 desigualdad))))))
+    (grup.verb (vsip000 son))
+    (s.a
+      (s.a
+        (grup.a (aq0000 grandes)))
+      (conj (cc y))
+      (sp
+        (prep (sp000 en))
+        (sn
+          (spec (di0000 muchos))
+          (grup.nom (nc0p000 casos)))))
+    (S
+      (grup.verb (vmis000 están))
+      (S
+        (gerundi (vmg0000 creciendo))
+        (sn (vmip000 aún) (nc0p000 más))))
+    (fp .)))
+
+(ROOT
+  (sentence
+    (sadv
+      (grup.adv (rg lamentablemente))
+      (fc ,))
+    (sn
+      (spec (da0000 lo))
+      (grup.nom (nc0p000 más)
+        (s.a
+          (grup.a (aq0000 probable)))))
+    (grup.verb (vsip000 es))
+    (S
+      (conj (cs que))
+      (sn
+        (spec (da0000 la))
+        (grup.nom (nc0s000 cumbre)))
+      (grup.verb (vssp000 sea))
+      (sn
+        (spec (di0000 una))
+        (grup.nom (nc0s000 oportunidad)
+          (S
+            (participi (aq0000 perdida))))))
+    (fp .)))
+
+(ROOT
+  (sentence
+    (sn
+      (spec (da0000 el))
+      (grup.nom (nc0s000 calentamiento)
+        (s.a
+          (grup.a (aq0000 planetario)))
+        (sp
+          (prep (sp000 en))
+          (sn
+            (grup.nom (nc0s000 modo))))
+        (sn
+          (grup.nom (pi000000 alguno)))))
+    (grup.verb (vsip000 es))
+    (sn
+      (spec (dp0000 nuestra))
+      (grup.nom
+        (s.a
+          (grup.a (aq0000 principal)))
+        (nc0s000 amenaza)
+        (s.a
+          (grup.a (aq0000 medioambiental)))))
+    (fp .)))
+
+(ROOT
+  (sentence
+    (conj (cc y))
+    (sn
+      (spec (da0000 los))
+      (grup.nom (nc0p000 modelos)
+        (S
+          (participi (aq0000 económicos)))))
+    (grup.verb (vmip000 muestran))
+    (S
+      (conj (cs que))
+      (sn
+        (grup.nom (nc0s000 francia)))
+      (grup.verb (vaip000 ha) (vmp0000 perdido))
+      (sn
+        (grup.nom
+          (grup.nom
+            (grup.nom (nc0p000 tantos))
+            (conj (cc o))
+            (grup.nom (nc0p000 más)))
+          (S
+            (participi (aq0000 puestos))
+            (sp
+              (prep (sp000 de))
+              (sn
+                (grup.nom (nc0s000 trabajo)
+                  (sp
+                    (prep (sp000 a))
+                    (sn
+                      (grup.nom (nc0s000 consecuencia)))))))
+            (sp
+              (prep (sp000 de))
+              (sn
+                (spec (da0000 los))
+                (grup.nom (nc0p000 costos)
+                  (S
+                    (participi (aq0000 suplementarios))
+                    (sp
+                      (prep (sp000 de))
+                      (sn
+                        (spec (da0000 las))
+                        (grup.nom (nc0p000 subvenciones))))))))))))
+    (fp .)))
+
+(ROOT
+  (sentence
+    (sn
+      (spec (dd0000 esa))
+      (grup.nom (nc0s000 situación)))
+    (grup.verb (vaip000 ha) (vmp0000 persistido))
+    (sp
+      (prep (sp000 durante))
+      (sn
+        (spec (dn0000 dos))
+        (grup.nom (nc0p000 decenios))))
+    (fp .)))
+
+(ROOT
+  (sentence
+    (grup.verb (vmii000 así))
+    (S (fc ,)
+      (conj (cs pues))
+      (fc ,)
+      (grup.verb (vmsp000 uribe))
+      (S
+        (neg (rn no))
+        (grup.verb (vmis000 pudo)
+          (infinitiu (vmn0000 defender)))
+        (sn
+          (spec (da0000 el))
+          (grup.nom
+            (s.a
+              (grup.a (aq0000 nuevo)))
+            (nc0s000 acuerdo)
+            (s.a
+              (grup.a (aq0000 militar)))))))
+    (fp .)))
+
+(ROOT
+  (sentence
+    (sn
+      (spec (da0000 la))
+      (grup.nom (nc0s000 forma)
+        (sp
+          (prep (sp000 en))
+          (S
+            (conj (cs que))
+            (morfema.verbal (p0000000 se))
+            (grup.verb (vaip000 ha) (vmp0000 llevado))
+            (sp
+              (prep (sp000 a))
+              (sn
+                (grup.nom (nc0s000 cabo))))
+            (sn
+              (spec (da0000 el))
+              (grup.nom (nc0s000 proceso)
+                (s.a
+                  (grup.a (aq0000 electoral)))
+                (sp
+                  (prep (sp000 en))
+                  (sn
+                    (grup.nom (nc0s000 zimbabwe)
+                      (sp
+                        (prep (sp000 desde))
+                        (sn
+                          (grup.nom (w marzo)))))))))))))
+    (grup.verb (vaip000 ha) (vsp0000 sido))
+    (sn
+      (spec (di0000 una))
+      (grup.nom (nc0s000 continuación)
+        (s.a
+          (neg (rn no))
+          (grup.a (aq0000 constitucional)))
+        (sp
+          (prep (sp000 de))
+          (sn
+            (spec (di0000 un))
+            (grup.nom (nc0s000 gobierno))))))
+    (fp .)))

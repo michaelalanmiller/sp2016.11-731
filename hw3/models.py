@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # Simple translation model and language model data structures
-import sys
+import sys, pdb
 from collections import namedtuple
 
 # A translation model is a dictionary where keys are tuples of French words
@@ -46,16 +46,91 @@ class LM:
     def begin(self):
         return ("<s>",)
 
+    def score_phrase(self, phrase):
+        """ 
+            Simply adds probabilities of unigram, bigram, trigrams in a phrase
+
+            Args:
+                state: tuple of strings
+            Returns:
+                (phrase, logprob)
+        """
+
+        unigrams = list(phrase)
+        bigrams = find_ngrams(phrase, 2)
+        trigrams = find_ngrams(phrase, 3)
+        ngrams = unigrams + bigrams + trigrams
+        score = 0.0
+
+        for ngram in ngrams:
+            if ngram in self.table:
+                score += self.table[ngram].logprob
+            else:
+                score -= 11.0
+
+        return (ngram, score)
+
+    def score_phrase_dir(self, phrase):
+        ngram = phrase
+        score = 0.0
+
+        # Forward
+        while len(ngram)> 0: # Starts out with entire thing
+            if ngram in self.table:
+                #return (ngram[-2:], score + self.table[ngram].logprob)
+                score += self.table[ngram].logprob
+                break
+            else: #backoff
+                if ngram[:-1] in self.table: 
+                    score += self.table[ngram[:-1]].backoff if len(ngram) > 1 else 0.0 
+                    break
+                ngram = ngram[1:] # Starts knocking it down
+
+        # Backward
+        ngram = phrase
+        while len(ngram)> 0: # Starts out with entire thing
+            if ngram in self.table:
+                #return (ngram[-2:], score + self.table[ngram].logprob)
+                score += self.table[ngram].logprob
+                break
+            else: #backoff
+                if ngram[:-1] in self.table: 
+                    score += self.table[ngram[:-1]].backoff if len(ngram) > 1 else 0.0 
+                    break
+                ngram = ngram[:-1]
+
+        if score == 0.0:
+            return (ngram, self.table[("<unk>",)].logprob)
+
+        else:
+            return (ngram, score)
+
     def score(self, state, word):
+        """ 
+            The original
+            Args:
+                state: tuple of strings
+                word: string
+            Returns:
+                (states, logprob)
+        """
+
         ngram = state + (word,)
         score = 0.0
-        while len(ngram)> 0:
+        while len(ngram)> 0: # Starts out with entire thing
             if ngram in self.table:
-                return (ngram[-2:], score + self.table[ngram].logprob)
+                #return (ngram[-2:], score + self.table[ngram].logprob)
+                return (ngram, score + self.table[ngram].logprob)
             else: #backoff
-                score += self.table[ngram[:-1]].backoff if len(ngram) > 1 else 0.0 
-                ngram = ngram[1:]
+                if ngram[:-1] in self.table: 
+                    score += self.table[ngram[:-1]].backoff if len(ngram) > 1 else 0.0 
+                else:
+                    score += 0.0
+                ngram = ngram[1:] # Starts knocking it down
         return ((), score + self.table[("<unk>",)].logprob)
         
     def end(self, state):
         return self.score(state, "</s>")[1]
+
+def find_ngrams(input_list, n):
+  return zip(*[input_list[i:] for i in range(n)])

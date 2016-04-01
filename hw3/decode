@@ -4,6 +4,7 @@ import sys
 import models
 import heapq
 from collections import namedtuple
+import pdb
 
 parser = argparse.ArgumentParser(description='Simple phrase based decoder.')
 parser.add_argument('-i', '--input', dest='input', default='data/input', help='File containing sentences to translate (default=data/input)')
@@ -50,6 +51,8 @@ for f in input_sents:
 
     # find best translation by looking at the best scoring hypothesis
     # on the last stack
+    if len(stacks[-1].values()) == 0:
+        pdb.set_trace()
     winner = max(stacks[-1].itervalues(), key=lambda h: h.logprob)
     def extract_english_recursive(h):
         return '' if h.predecessor is None else '%s%s ' % (extract_english_recursive(h.predecessor), h.phrase.english)

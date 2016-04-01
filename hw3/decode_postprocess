@@ -1,0 +1,163 @@
+#!/usr/bin/env python
+import argparse
+import sys
+import models
+import heapq
+from collections import namedtuple
+import pdb
+
+
+parser = argparse.ArgumentParser(description='Simple phrase based decoder.')
+parser.add_argument('-i', '--input', dest='input', default='data/input',
+                    help='File containing sentences to translate (default=data/input)')
+parser.add_argument('-t', '--translation-model', dest='tm', default='data/tm',
+                    help='File containing translation model (default=data/tm)')
+parser.add_argument('-s', '--stack-size', dest='s',
+                    default=5, type=int, help='Maximum stack size (default=1)')
+parser.add_argument('-n', '--num_sentences', dest='num_sents', default=sys.maxint,
+                    type=int, help='Number of sentences to decode (default=no limit)')
+parser.add_argument('-l', '--language-model', dest='lm', default='data/lm',
+                    help='File containing ARPA-format language model (default=data/lm)')
+parser.add_argument('-v', '--verbose', dest='verbose',
+                    action='store_true', default=False, help='Verbose mode (default=off)')
+opts = parser.parse_args()
+
+tm = models.TM(opts.tm, sys.maxint)
+lm = models.LM(opts.lm)
+sys.stderr.write('Decoding %s...\n' % (opts.input,))
+input_sents = [tuple(line.strip().split())
+               for line in open(opts.input).readlines()[:opts.num_sents]]
+
+
+def contains_sublist(lst, sublst):
+    n = len(sublst)
+    return any((sublst == lst[i:i + n]) for i in xrange(len(lst) - n + 1))
+
+
+def new_hyp(h, phrase, idx, size, esp):
+    '''
+    input:
+        h: current hypothesis block
+        phrase: a phrase to translate
+        idx: index of the ending of the phrase
+        size: sentence length
+    output:
+        logprob: The resulting log-probability for h + phrase
+        lm_state: The resulting sequence of words translated
+        hypothesis: hypothesis block for stacks that contains information above
+    '''
+    global lm
+    logprob = h.logprob + phrase.logprob
+    lm_state = h.lm_state
+    for word in phrase.english.split():
+        (lm_state, word_logprob) = lm.score(lm_state, word)
+        logprob += word_logprob
+    logprob += lm.end(lm_state) if idx == size else 0.0
+    return logprob, lm_state, hypothesis(logprob, lm_state, h, phrase, esp)
+
+
+def extract_english_recursive(h):
+    return '' if h.predecessor is None else '%s%s ' % (extract_english_recursive(h.predecessor), h.phrase.english)
+
+def extract_phrases(h):
+    """ Return a list of phrases (en, es) in the hypothesis 
+        Recursive
+    """
+    if not h.predecessor: return []
+    else:
+        ec = extract_phrases(h.predecessor)
+        ec.extend([(h.phrase.english, h.src)])
+        return ec
+    #return '' if h.predecessor is None else '%s%s %s ' % (extract_phrases(h.predecessor), h.phrase.english, h.src)
+
+def extract_tm_logprob(h):
+    return 0.0 if h.predecessor is None else h.phrase.logprob + extract_tm_logprob(h.predecessor)
+
+hypothesis = namedtuple('hypothesis', 'logprob, lm_state, predecessor, phrase, src')
+
+def retrans(winner):
+    """ Post-processing step to retranslate phrases,
+        look at context language model scores and 
+        try to improve logprob
+    """
+    global tm    
+    global lm
+
+    phrases = extract_phrases(winner) # List of phrases es-en
+    for i, (en, es) in enumerate(phrases):
+        if i > 0: prevphrase = phrases[i-1]
+        if i < len(phrases)-1: nextphrase = phrases[i+1]
+
+        poss = tm[es]
+        poss_scores = []
+        
+        # Choose best possibility based on best tm * lm_context
+        for p in poss:
+            pdb.set_trace()
+            if i == 0:
+                score = p.logprob + lm.score(tuple(p.english.split(' ')), nextphrase[0])
+            elif i == len(phrases)-1:
+            poss_scores.append(score)
+    
+    origscore = winner.logprob
+
+    # Compute logprob of whole new best sentence, compare with original
+    return winner
+
+""" Main routine """
+for f in input_sents:
+    N = len(f)
+    stacks = [{} for _ in f] + [{}]
+
+    # Place empty hypothesis
+    initial_hypothesis = hypothesis(0.0, lm.begin(), None, None, "")
+    stacks[0][lm.begin()] = initial_hypothesis
+
+    for i, stack in enumerate(stacks[:-1]):
+        # If i is not the end of the sentence, you can look 2 words ahead
+        if i + 2 < len(stacks):
+            # Pick top [opts.s] hypotheses
+            for h in heapq.nlargest(opts.s, stacks[i].itervalues(), key=lambda h: h.logprob):
+                for k in xrange(i + 1, N + 1): 
+                    # If a translation is found in f[i:k], find the next phrase starting from k until j, and make a new hypothesis till that point (take into account the reordering)
+                    if f[i:k] in tm:  
+                        for j in xrange(k + 1, N + 1):
+                            # If f[k:j] is a valid phrase, make a new hypothesis
+                            if f[k:j] in tm: # Find second phrase for reordering
+                                reordering_hyps = []
+                                for phrase in tm[f[k:j]]:
+                                    _, _, new_hypothesis = new_hyp(h, phrase, j, N, f[k:j])
+                                    reordering_hyps.append(new_hypothesis)
+
+                                for hi in reordering_hyps:
+                                    # Consider skipped f[i:k] and append them
+                                    for phrase in tm[f[i:k]]:
+                                        logprob, lm_state, new_hypothesis = new_hyp(hi, phrase, k, N, f[i:k])
+                                        # second case is recombination
+                                        if lm_state not in stacks[j] or stacks[j][lm_state].logprob < logprob:
+                                            # Finally add hypothesis with reordering
+                                            stacks[j][lm_state] = new_hypothesis
+
+        # Add hypotheses with no reordering
+        for h in heapq.nlargest(opts.s, stacks[i].itervalues(), key=lambda h: h.logprob):
+            for k in xrange(i + 1, N + 1):
+                if f[i:k] in tm: # Consider all possible spans that are phrases in the translation model
+                    for phrase in tm[f[i:k]]:
+                        logprob, lm_state, new_hypothesis = new_hyp(h, phrase, k, N, f[i:k])
+
+                        if lm_state not in stacks[k] or stacks[k][lm_state].logprob < logprob:
+                            stacks[k][lm_state] = new_hypothesis
+
+    # find best translation by looking at the best scoring hypothesis
+    # on the last stack
+    winner = max(stacks[-1].itervalues(), key=lambda h: h.logprob)
+
+    # Second pass: try to transform winner
+    winner = retrans(winner)
+
+    print extract_english_recursive(winner)
+
+    if opts.verbose:
+        tm_logprob = extract_tm_logprob(winner)
+        sys.stderr.write('LM = %f, TM = %f, Total = %f\n' %
+                         (winner.logprob - tm_logprob, tm_logprob, winner.logprob))
