@@ -1,3 +1,13 @@
+# Running
+
+'''
+./encoderdecoder ../data/train.src ../data/train.tgt ../data/dev.src ../data/dev.tgt ../data/test.src
+'''
+
+## Output
+Every time the model has a lower error than anything previous, saves to the current directory (build) the attempted translated test set as 'testout_<timestamp>.txt'.
+
+# Original text
 There are two Python programs here:
 
  - `python bleu.py your-output.txt ref.txt` to compute the BLEU score of your output against the reference translation.
