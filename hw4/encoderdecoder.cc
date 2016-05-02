@@ -161,7 +161,7 @@ vector<string> Translate(vector<vector<int>>&  test_sents, EncoderDecoder<LSTMBu
 	tr.outbuilder.add_input(lookup(cg, tr.p_c, kSOS2));
   	Expression h_t = tr.outbuilder.back();
   	//cerr << "<s> ";
-  	int translation;
+  	int translation = -1;
   	int count = 0;
 	string trans_sent;
   	while(translation != kEOS2 and count < 50){
